@@ -58,6 +58,6 @@ Mario was inspired by Windowlicker.
 
 [BSD License]: http://opensource.org/licenses/BSD-3-Clause
 [Selenium WebDriver]: http://www.seleniumhq.org/projects/webdriver/
-[Maven central]: http://search.maven.org/#search%7Cga%7C1%7Cg%com.vtence.mario
+[Maven central]: http://search.maven.org/#search%7Cga%7C1%7Ccom.vtence.mario
 [Sonatype Snapshots Repositories]: https://oss.sonatype.org/content/repositories/snapshots
 [GitHub issue tracker]: https://github.com/testinfected/mario/issues
