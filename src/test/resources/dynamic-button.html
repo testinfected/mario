@@ -1,0 +1,38 @@
+<html>
+<head>
+    <title>Example Async Interaction With Dynamic Content</title>
+</head>
+<body>
+<h1>Example Async Interaction With Dynamic Content</h1>
+
+<p id="display">Waiting to start</p>
+
+<button id="start" type="button" value="Start" onclick="eventually(start);">Start</button>
+<div id="dynamic"></div>
+
+<script type="text/javascript">
+    function start() {
+        document.getElementById("display").textContent = "In progress...";
+        var div = document.getElementById("dynamic");
+
+        if (div.childNodes.length == 0) {
+            var stopButton = document.createElement("button");
+            stopButton.value = "Stop";
+            stopButton.id = "stop";
+            stopButton.type = "button";
+            stopButton.addEventListener("click", function() {eventually(stop);}, false);
+
+            div.appendChild(stopButton);
+        }
+    }
+
+    function stop() {
+        document.getElementById("display").textContent = "Stopped.";
+    }
+
+    function eventually(f) {
+        setTimeout(f, 250);
+    }
+</script>
+</body>
+</html>

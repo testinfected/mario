@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Example Async Element Creation</title>
+</head>
+<body>
+<h1>Example Async Element Creation</h1>
+
+<script type="text/javascript">
+    function createElement() {
+        var e = document.createElement("p");
+        e.id = "born";
+        e.textContent = "Success!";
+        document.getElementsByTagName("body")[0].appendChild(e);
+    }
+
+    function eventually(f) {
+        setTimeout(f, 1000);
+    }
+
+    eventually(createElement);
+</script>
+</body>
+</html>

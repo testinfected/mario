@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Example Async Element Deletion</title>
+</head>
+<body>
+<h1>Example Async Element Deletion</h1>
+
+<p id="ghost">Goodbye, cruel world...</p>
+
+<script type="text/javascript">
+    function deleteElement() {
+        var e = document.getElementById("ghost");
+        e.parentNode.removeChild(e);
+    }
+
+    function eventually(f) {
+        setTimeout(f, 1000);
+    }
+
+    eventually(deleteElement);
+</script>
+</body>
+</html>

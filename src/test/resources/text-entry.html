@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Text Entry Example</title>
+</head>
+<body>
+<h1>Text Entry Example</h1>
+
+<p>Input: <input id="input" onkeypress="eventually(reverseText);"/>
+<p>Reversed: <span id="reversed"></span></p>
+
+<script type="text/javascript">
+    function reverseText() {
+        var input = document.getElementById("input").value;
+        var reversed = input.split('').reverse().join('');
+        document.getElementById("reversed").textContent = reversed;
+    }
+
+    function eventually(f) {
+        setTimeout(f, 500);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>Text Entry Example</title>
+
+    <style type="text/css">
+        #menu > button {
+            display:none;
+        }
+
+        #menu:hover > button {
+            display:block;
+        }
+    </style>
+</head>
+<body>
+<h1>Text Entry Example</h1>
+
+<p id="display">Find the hidden button</p>
+
+<div id="menu">
+    <span>Hey, over here!</span>
+    <button id="button" type="submit" onclick="eventually(changeText);">Try me</button>
+</div>
+
+<script type="text/javascript">
+    function changeText() {
+        document.getElementById("display").textContent = "Success!";
+    }
+
+    function eventually(f) {
+        setTimeout(f, 250);
+    }
+</script>
+</body>
+</html>

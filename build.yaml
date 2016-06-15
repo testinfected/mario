@@ -1,0 +1,14 @@
+gems:
+
+repositories:
+  remote:
+    - http://repo1.maven.org/maven2
+
+artifacts:
+  selenium_api: org.seleniumhq.selenium:selenium-api:jar:2.53.0
+  hamcrest: org.hamcrest:java-hamcrest:jar:2.0.0.0
+
+  # -- test dependencies
+  junit: junit:junit:jar:4.12
+  hamcrest_junit: org.hamcrest:hamcrest-junit:jar:2.0.0.0
+  selenium_firefox_driver: org.seleniumhq.selenium:selenium-firefox-driver:jar:2.53.0

@@ -1,0 +1,14 @@
+syntax: glob
+
+*.iws
+*.ipr
+.idea
+.DS_Store
+build
+target
+reports
+buildr.rb
+.gradle
+.java-version
+.ruby-version
+

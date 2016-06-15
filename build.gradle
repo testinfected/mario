@@ -1,0 +1,41 @@
+group 'com.vtence.mario'
+version '0.1-SNAPSHOT'
+
+apply plugin: 'java'
+apply plugin: 'jacoco'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+def libs = [
+        selenium_api           : 'org.seleniumhq.selenium:selenium-api:2.53.0',
+        hamcrest               : 'org.hamcrest:java-hamcrest:2.0.0.0',
+
+        junit                  : 'junit:junit:4.12@jar',
+        hamcrest_junit         : 'org.hamcrest:hamcrest-junit:2.0.0.0',
+        selenium_firefox_driver: 'org.seleniumhq.selenium:selenium-firefox-driver:2.53.0'
+]
+
+dependencies {
+    compile libs.hamcrest
+    compile libs.selenium_api
+
+    testCompile libs.junit
+    testCompile libs.hamcrest_junit
+    testCompile libs.selenium_firefox_driver
+}
+
+compileJava.options.encoding = 'UTF-8'
+
+jacocoTestReport {
+    reports {
+        xml.enabled = true // coveralls plugin depends on xml format report
+        html.enabled = true
+    }
+}
+
+task coverage(dependsOn: ['test', 'jacocoTestReport'])
+

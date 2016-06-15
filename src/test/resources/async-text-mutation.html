@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Example Async Text Change</title>
+</head>
+<body>
+<h1>Example Async Text Change</h1>
+
+<p id="mutant">This text will change soon</p>
+
+<script type="text/javascript">
+    function changeText() {
+        document.getElementById("mutant").textContent = "Success!";
+    }
+
+
+    function eventually(f) {
+        setTimeout(f, 1000);
+    }
+
+    eventually(changeText);
+</script>
+</body>
+</html>
