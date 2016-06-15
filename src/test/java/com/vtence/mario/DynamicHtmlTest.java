@@ -34,7 +34,6 @@ public class DynamicHtmlTest extends WebTest {
         open("async-visibility.html");
 
         browser.element(By.id("secret")).isHidden();
-        browser.element(By.id("discloser")).click();
         browser.element(By.id("secret")).isShowingOnScreen();
     }
 }
