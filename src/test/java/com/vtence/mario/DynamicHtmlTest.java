@@ -28,4 +28,13 @@ public class DynamicHtmlTest extends WebTest {
 
         browser.element(By.id("mutant")).hasText(containsString("Success"));
     }
+
+    @Test
+    public void assertingAnElementIsDisplayed() {
+        open("async-visibility.html");
+
+        browser.element(By.id("secret")).isHidden();
+        browser.element(By.id("discloser")).click();
+        browser.element(By.id("secret")).isShowingOnScreen();
+    }
 }

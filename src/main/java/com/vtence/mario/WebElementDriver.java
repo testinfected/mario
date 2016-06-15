@@ -13,6 +13,7 @@ public class WebElementDriver {
     private final ElementSelector selector;
     private final Prober prober;
     private final GesturePerformer gesturePerformer;
+    private boolean hidden;
 
     public WebElementDriver(ElementSelector selector, Prober prober, GesturePerformer gesturePerformer) {
         this.selector = selector;
@@ -30,6 +31,10 @@ public class WebElementDriver {
 
     public void isShowingOnScreen() {
         is(ElementStates.displayed());
+    }
+
+    public void isHidden() {
+        is(ElementStates.hidden());
     }
 
     public void isEnabled() {

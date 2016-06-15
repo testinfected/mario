@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Example Async Toggle Element Visibility</title>
+</head>
+<body>
+<h1>Example Async Toggle Element Visibility</h1>
+
+<p id="secret" style="display: none;">This secret will soon be revealed</p>
+
+<button type="button" id="discloser" onclick="eventually(revealSecret);">Click to reveal the secret</button>
+
+<script type="text/javascript">
+    function revealSecret() {
+        document.getElementById("secret").style.display = '';
+    }
+
+    function eventually(f) {
+        setTimeout(f, 1000);
+    }
+</script>
+</body>
+</html>

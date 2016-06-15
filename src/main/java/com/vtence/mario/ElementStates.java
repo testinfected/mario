@@ -10,4 +10,8 @@ public class ElementStates {
     public static ElementStateMatcher enabled() {
         return new ElementStateMatcher(WebElement::isEnabled, "enabled", "disabled");
     }
+
+    public static ElementStateMatcher hidden() {
+        return new ElementStateMatcher(element -> !element.isDisplayed(), "hidden", "displayed");
+    }
 }
