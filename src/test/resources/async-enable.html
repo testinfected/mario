@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Example Async Element Enable</title>
+</head>
+<body>
+<h1>Example Async Element Enable</h1>
+
+<button type="button" id="action" disabled>Soon to be enabled</button>
+
+<script type="text/javascript">
+    function enableElement() {
+        document.getElementById("action").removeAttribute("disabled");
+    }
+
+    function eventually(f) {
+        setTimeout(f, 1000);
+    }
+
+    eventually(enableElement);
+</script>
+</body>
+</html>

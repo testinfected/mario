@@ -36,4 +36,12 @@ public class DynamicHtmlTest extends WebTest {
         browser.element(By.id("secret")).isHidden();
         browser.element(By.id("secret")).isShowingOnScreen();
     }
+
+    @Test
+    public void assertingAnElementIsEnabled() {
+        open("async-enable.html");
+
+        browser.element(By.id("action")).isDisabled();
+        browser.element(By.id("action")).isEnabled();
+    }
 }

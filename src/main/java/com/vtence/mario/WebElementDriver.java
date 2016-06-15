@@ -41,6 +41,10 @@ public class WebElementDriver {
         is(ElementStates.enabled());
     }
 
+    public void isDisabled() {
+        is(ElementStates.disabled());
+    }
+
     public void is(ElementStateMatcher state) {
         check(new ElementAssertionProbe(selector, state));
     }
