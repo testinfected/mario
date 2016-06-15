@@ -8,7 +8,7 @@ Licensed under the [BSD License][].
 
 What is Mario?
 --------------
-Mario is java library intended to simplify asynchronous testing with [Selenium WebDriver][].
+Mario is a java library intended to simplify asynchronous testing with [Selenium WebDriver][].
 
 It takes care of the activity of polling for certain conditions or states to occur and manages timeouts, replacing the need for explicit or implicit waits.
 
