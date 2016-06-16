@@ -18,7 +18,7 @@ public class MissingElementProbe extends ElementProbe {
     }
 
     public void describeTo(Description description) {
-        description.appendText("check ");
+        description.appendText("check that");
         super.describeTo(description);
         description.appendText(" did not exist");
     }

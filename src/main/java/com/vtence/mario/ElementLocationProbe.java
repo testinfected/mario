@@ -27,7 +27,7 @@ public class ElementLocationProbe extends ElementProbe {
     }
 
     public void describeTo(Description description) {
-        description.appendText("locate center of");
+        description.appendText("locate center of ");
         super.describeTo(description);
     }
 
