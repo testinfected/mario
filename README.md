@@ -1,3 +1,4 @@
+[![Maven Central](https://img.shields.io/maven-central/v/com.vtence.mario/mario.svg?style=flat)](https://maven-badges.herokuapp.com/maven-central/com.vtence.mario/mario)
 [![Build Status](https://travis-ci.org/testinfected/mario.svg?branch=master)](https://travis-ci.org/testinfected/mario)
 
 
