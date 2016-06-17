@@ -2,6 +2,7 @@ package com.vtence.mario;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 
 public class ElementPropertyAssertionProbe<T> extends ElementProbe {
@@ -20,7 +21,11 @@ public class ElementPropertyAssertionProbe<T> extends ElementProbe {
     }
 
     public void probe(WebElement element) {
-        value = query.query(element);
+        try {
+            value = query.query(element);
+        } catch (StaleElementReferenceException ignored) {
+            // try again
+        }
     }
 
     public boolean isSatisfied() {
