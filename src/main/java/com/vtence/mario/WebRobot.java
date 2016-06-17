@@ -26,14 +26,6 @@ public class WebRobot implements GesturePerformer {
         mouse().click(where);
     }
 
-    public void delay(long millis) {
-        try {
-            Thread.sleep(millis);
-        } catch (InterruptedException ignored) {
-            Thread.currentThread().interrupt();
-        }
-    }
-
     private Mouse mouse() {
         return inputDevices().getMouse();
     }

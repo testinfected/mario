@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>Example Async Stale Element</title>
+</head>
+<body>
+<h1>Example Async Stale Element</h1>
+
+<p id="bye"></p>
+
+<script type="text/javascript">
+    function removeElement() {
+        var e = document.getElementById("bye");
+        e.parentNode.removeChild(e);
+    }
+
+    function eventually(f) {
+        setTimeout(f, 250);
+    }
+
+    eventually(removeElement);
+</script>
+</body>
+</html>

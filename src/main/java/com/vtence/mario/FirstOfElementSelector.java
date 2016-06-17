@@ -22,7 +22,7 @@ public class FirstOfElementSelector implements ElementSelector {
         foundElement = null;
         try {
             foundElement = context.findElement(criteria);
-        } catch (NotFoundException | StaleElementReferenceException tryAgain) {
+        } catch (NotFoundException tryAgain) {
         }
     }
 

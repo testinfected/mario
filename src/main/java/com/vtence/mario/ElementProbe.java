@@ -1,11 +1,13 @@
 package com.vtence.mario;
 
 import org.hamcrest.Description;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebElement;
 
 public abstract class ElementProbe implements Probe {
 
     private final ElementSelector selector;
+    private boolean stale;
 
     public ElementProbe(ElementSelector selector) {
         this.selector = selector;
@@ -13,15 +15,19 @@ public abstract class ElementProbe implements Probe {
 
     public void probe() {
         selector.probe();
-        if (selector.isSatisfied()) {
+        if (!selector.isSatisfied()) return;
+
+        try {
             probe(selector.found());
+        } catch (StaleElementReferenceException giveUp) {
+            stale = true;
         }
     }
 
     protected abstract void probe(WebElement found);
 
     public boolean isSatisfied() {
-        return selector.isSatisfied();
+        return selector.isSatisfied() && !stale;
     }
 
     @Override

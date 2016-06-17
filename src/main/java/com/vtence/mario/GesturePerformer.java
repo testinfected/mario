@@ -13,5 +13,11 @@ public interface GesturePerformer {
 
     void mouseClick(Coordinates where);
 
-    void delay(long millis);
+    default void delay(long millis) {
+        try {
+            Thread.sleep(millis);
+        } catch (InterruptedException ignored) {
+            Thread.currentThread().interrupt();
+        }
+    }
 }
