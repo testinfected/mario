@@ -1,14 +1,16 @@
 sudo: false
-
 language: java
-
 jdk:
-  - oraclejdk8
-
+- oraclejdk8
 addons:
-  firefox: "46.0.1"
-
+  firefox: 46.0.1
 before_script:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - sleep 3 # give xvfb some time to start
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- sleep 3
+env:
+  global:
+  - secure: 1FXgPfPdySdk/gq/QufU6muUgiIZbrBljI+jcCxH2XH/CcrAWJf9S16ykQfJKAxy9kTznVkSJVsLeqVXj8WDfxyFMS0ukT4YtzOSEJQ/aM+Y2RUHEScpcEJozrSCeYruZ59VYF7aOYiFFNtrRmku9aNolHoZCm5G4uVjWY9T2lhNoyUOehBlpP899e4AeqMLcNpcsblC2RVFrclXtNMLPyMZHhpAD+pjDSQu32BMO3fhikTFHkjnjL5OclBV6AgFujj2qNiGCuq66YpQ/hO1BJQkDlLSbbARpoWFzsBUxQcDoPKfyluHgfudaZDgNUQR9aj2TUeD28IlJzBjxryKrgCDb31NRLdHGXZiEU3zDIdDtD1r4rjAxPxxXc96eQ9E78ypOV8fRogwoWpnjgypwWHkZFhVMhtVt3PYxI3OEWF7x14bTn4tsjPvmwnmR8nFgVqksIf5g1ZXdJnYb7TX7bR6UEHF42tKTd1KlxruypE5cCeAuzVvwLI2sxfWVTAe38TTXTHhUyWqR1368RP2gbPS4wqYzZgL6lnx0YnEOV0hlBnAGI9twoKZ8rm4LlcXIlE3e1/XnoQNU2nLbCffWOsMj3qwz8pCoWGKtZPNTdq56WLxJue7+b7+RhUWi1Vu43HomZwQJUz1eSTYkW45ln6xLKH7svsWuFCsvIA7XlY=
+  - secure: y+XQdevCP36Yr4qI2D+tRVTMqsXPMO8UDhX8bnrUNeQRd/UMkVYaJzPXEGmKpp/a7O2TIhfAABmJ9QdcFEdQt3ZbpzrJM7Q2hVDcGxHOtMoM6hlUsFEPLQuH0BvgXPMhgHIJjdu7FM5UlCOJjh8ARa2zVVBKYAmmUMhMHMXXWYU48BIITr0EsHt8M8+WaCGhODAWkm94kCYzNrRSPmQIkZ582OVbkJxuGfgm6xkM6JI/bbpk7d7s2NkcThQWdWm03/1Z3y01qFJMHXtk9hSRHEBnuteeI0I108m5Fr/eVFbTL+YH7k8buoSP/rHqjFiO1N/FfYQFe0UT9cNdxFK52shS6w3jRkYuwfYE9CLuvuoWDLTzvKCw5BhJ4NzdwLCCT5I0baup6hrY7PI2/3R20fE5cTNwXtCcW7u7NJehPDrfAo5dHJ8ATVa2+uyf5g+AS17dzRDYC5zRS82R/5PBEaa+PamsrZt38O1F7ocME4PFkvPyNzfXve0zJ61BVrgsDGrYnnmzgx3Lp8f9Xu5en2nJ/6IqBl4RJYRkQZCtc9Xpj+OYpQ9A8zYqbyvu7tbkFFv620cJDG6aBsT4gLlo8yi448u2KztDTs81aE32iFQl6wCosuf3Gldc92VOQ467X50HYvuZneX29V+g+YAFA4hddi/jfmpgVPbfCD5UTYM=
+after_success:
+  - publish.sh
