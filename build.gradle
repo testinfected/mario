@@ -39,3 +39,7 @@ jacocoTestReport {
 
 task coverage(dependsOn: ['test', 'jacocoTestReport'])
 
+task 'version' << {
+    println version
+}
+
