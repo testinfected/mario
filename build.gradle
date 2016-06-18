@@ -2,7 +2,6 @@ group 'com.vtence.mario'
 version '0.2-SNAPSHOT'
 
 apply plugin: 'java'
-apply plugin: 'jacoco'
 
 sourceCompatibility = 1.8
 
@@ -29,15 +28,6 @@ dependencies {
 }
 
 compileJava.options.encoding = 'UTF-8'
-
-jacocoTestReport {
-    reports {
-        xml.enabled = true // coveralls plugin depends on xml format report
-        html.enabled = true
-    }
-}
-
-task coverage(dependsOn: ['test', 'jacocoTestReport'])
 
 task 'version' << {
     println version
