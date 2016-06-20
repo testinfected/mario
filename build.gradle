@@ -2,8 +2,18 @@ group 'com.vtence.mario'
 version '0.2-SNAPSHOT'
 
 apply plugin: 'java'
-
 sourceCompatibility = 1.8
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.bmuschko:gradle-nexus-plugin:2.3.1'
+    }
+}
+
+apply plugin: 'com.bmuschko.nexus'
 
 repositories {
     mavenCentral()
@@ -18,9 +28,15 @@ def libs = [
         selenium_firefox_driver: 'org.seleniumhq.selenium:selenium-firefox-driver:2.53.0'
 ]
 
+def providedDependencies = []
+ext {
+    provided = { providedDependencies << it; it }
+}
+
+
 dependencies {
     compile libs.hamcrest
-    compile libs.selenium_api
+    compile libs.selenium_api, provided
 
     testCompile libs.junit
     testCompile libs.hamcrest_junit
@@ -31,5 +47,39 @@ compileJava.options.encoding = 'UTF-8'
 
 task 'version' << {
     println version
+}
+
+modifyPom {
+    project {
+        name 'Mario'
+        description 'A library for asynchronous testing using WebDriver'
+        url 'http://vtence.com/mario'
+        packaging 'jar'
+        licenses {
+            license {
+                name 'BSD License'
+                url 'https://opensource.org/licenses/BSD-3-Clause'
+                distribution 'repo'
+            }
+        }
+        scm {
+            url 'https://github.com/testinfected/mario'
+            connection 'scm:git:https://github.com/testinfected/mario.git'
+            developerConnection 'scm:git@github.com:testinfected/mario.git'
+        }
+        developers {
+            developer {
+                id 'testinfected'
+                name 'Vincent Tencé'
+            }
+        }
+
+        providedDependencies.each { dep ->
+            dependencies.find { it.artifactId == dep.name }.scope = 'provided'
+        }
+
+        // no need to publish test dependencies
+        dependencies.removeAll { it.scope == "test" }
+    }
 }
 
