@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Nested Elements</title>
+</head>
+<body>
+<h1>Example of Nested Elements</h1>
+<div id="outer">
+    <ul>
+        <li id="a"><button onclick="updateDisplay('A');" class="button">Button A</button></li>
+        <li id="b"><button onclick="updateDisplay('B');" class="button">Button B</button></li>
+    </ul>
+
+    <p id="display">Nothing Pressed Yet</p>
+</div>
+
+<script type="text/javascript">
+    function updateDisplay(which) {
+        document.getElementById("display").textContent = "Button " + which + " was pressed";
+    }
+</script>
+</body>
+</html>

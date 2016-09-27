@@ -1,6 +1,7 @@
 package com.vtence.mario;
 
 import org.hamcrest.Matcher;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.internal.Coordinates;
 
@@ -99,5 +100,10 @@ public class WebElementDriver {
 
     public void perform(UserGesture gesture) {
         gesturePerformer.perform(gesture);
+    }
+
+    public WebElementDriver element(By criteria) {
+        exists();
+        return new WebElementDriver(new FirstOfElementSelector(selector.found(), criteria), prober, gesturePerformer);
     }
 }
