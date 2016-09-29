@@ -33,13 +33,4 @@ public class InteractionsTest extends WebTest {
         browser.element(id("input")).type("hello world\n");
         browser.element(id("reversed")).hasText("dlrow olleh");
     }
-
-    @Test public void
-    revealingThenInteractingWithAnHiddenElement() {
-        open("hover-menu.html");
-
-        browser.element(id("menu")).moveMouseToCenter();
-        browser.element(id("button")).click();
-        browser.element(id("display")).hasText("Success!");
-    }
 }

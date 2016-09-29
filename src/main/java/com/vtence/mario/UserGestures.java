@@ -12,6 +12,10 @@ public class UserGestures {
         return (robot) -> robot.mouseClick(where);
     }
 
+    public static UserGesture typeText(String text) {
+        return (robot) -> robot.type(text);
+    }
+
     public static UserGesture pause(long millis) {
         return (robot) -> robot.delay(millis);
     }

@@ -13,6 +13,8 @@ public interface GesturePerformer {
 
     void mouseClick(Coordinates where);
 
+    void type(String text);
+
     default void delay(long millis) {
         try {
             Thread.sleep(millis);

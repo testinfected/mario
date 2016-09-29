@@ -2,6 +2,7 @@ package com.vtence.mario;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.HasInputDevices;
+import org.openqa.selenium.interactions.Keyboard;
 import org.openqa.selenium.interactions.Mouse;
 import org.openqa.selenium.interactions.internal.Coordinates;
 
@@ -24,6 +25,14 @@ public class WebRobot implements GesturePerformer {
 
     public void mouseClick(Coordinates where) {
         mouse().click(where);
+    }
+
+    public void type(String text) {
+        keyboard().sendKeys(text);
+    }
+
+    private Keyboard keyboard() {
+        return inputDevices().getKeyboard();
     }
 
     private Mouse mouse() {

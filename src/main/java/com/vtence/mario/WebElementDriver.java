@@ -98,6 +98,11 @@ public class WebElementDriver {
         perform(UserGestures.mouseClickAt(elementCenter()));
     }
 
+    public void enterTextUsingKeyboard(String text) {
+        leftClickWithMouse();
+        perform(UserGestures.typeText(text));
+    }
+
     public void perform(UserGesture gesture) {
         gesturePerformer.perform(gesture);
     }
