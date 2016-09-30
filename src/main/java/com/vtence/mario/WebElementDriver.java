@@ -4,6 +4,7 @@ import org.hamcrest.Matcher;
 import org.openqa.selenium.By;
 import org.openqa.selenium.interactions.internal.Coordinates;
 
+import static java.lang.String.format;
 import static org.hamcrest.Matchers.equalTo;
 
 public class WebElementDriver {
@@ -66,6 +67,12 @@ public class WebElementDriver {
 
     public void type(String text) {
         apply(ElementActions.type(text));
+    }
+
+    public <T> T query(String description, Query<T> query) {
+        QueryManipulation<T> manipulation = new QueryManipulation<T>(query);
+        manipulate(format("query %s of ", description), manipulation);
+        return manipulation.value();
     }
 
     public void manipulate(String description, Manipulation manipulation) {
