@@ -99,6 +99,7 @@ public class WebElementDriver {
 
     public void leftClickWithMouse() {
         isShowingOnScreen();
+        isEnabled();
         perform(UserGestures.mouseClickAt(elementCenter()));
     }
 
