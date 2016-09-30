@@ -2,10 +2,7 @@ package com.vtence.mario;
 
 import org.hamcrest.Matcher;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.internal.Coordinates;
-
-import java.util.function.Consumer;
 
 import static org.hamcrest.Matchers.equalTo;
 
@@ -71,7 +68,7 @@ public class WebElementDriver {
         apply(ElementActions.type(text));
     }
 
-    public void manipulate(String description, Consumer<WebElement> manipulation) {
+    public void manipulate(String description, Manipulation manipulation) {
         apply(ElementManipulation.manipulate(description, manipulation));
     }
 

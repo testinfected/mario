@@ -1,13 +1,15 @@
 package com.vtence.mario;
 
 import org.junit.Test;
+import org.openqa.selenium.WebElement;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.openqa.selenium.By.id;
 
 public class InteractionsTest extends WebTest {
 
-    @Test public void
+    @Test
+    public void
     initiatingDynamicBehaviourWithUserAction() {
         open("button-click.html");
 
@@ -15,7 +17,8 @@ public class InteractionsTest extends WebTest {
         browser.element(id("display")).hasText(containsString("Success!"));
     }
 
-    @Test public void
+    @Test
+    public void
     interactingWithDynamicContent() {
         open("dynamic-button.html");
 
@@ -26,11 +29,22 @@ public class InteractionsTest extends WebTest {
         browser.element(id("display")).hasText("Stopped.");
     }
 
-    @Test public void
+    @Test
+    public void
     typingText() {
         open("text-entry.html");
 
         browser.element(id("input")).type("hello world\n");
         browser.element(id("reversed")).hasText("dlrow olleh");
+    }
+
+    @Test
+    public void
+    manipulatingAnElement() {
+        open("text-entry.html");
+
+        browser.element(id("input")).type("hello world");
+        browser.element(id("input")).manipulate("clear its content", WebElement::clear);
+        browser.element(id("input")).hasText("");
     }
 }

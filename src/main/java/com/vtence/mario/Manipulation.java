@@ -3,7 +3,7 @@ package com.vtence.mario;
 import org.openqa.selenium.WebElement;
 
 @FunctionalInterface
-public interface ElementQuery<T> {
+public interface Manipulation {
 
-    T query(WebElement element);
+    void manipulate(WebElement element);
 }

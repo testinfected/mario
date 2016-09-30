@@ -20,7 +20,7 @@ public class ElementPropertyAssertionProbe<T> extends ElementProbe {
     }
 
     public void probe(WebElement element) {
-        value = query.query(element);
+        value = query.perform(element);
     }
 
     public boolean isSatisfied() {
