@@ -97,10 +97,6 @@ public class WebElementDriver {
         return coordinates.center();
     }
 
-    public void check(Probe probe) {
-        prober.check(probe);
-    }
-
     public void moveMouseToCenter() {
         perform(UserGestures.mouseMoveTo(elementCenter()));
     }
@@ -123,5 +119,9 @@ public class WebElementDriver {
     public WebElementDriver element(By criteria) {
         exists();
         return new WebElementDriver(new FirstOfElementSelector(selector.found(), criteria), prober, gesturePerformer);
+    }
+
+    private void check(Probe probe) {
+        prober.check(probe);
     }
 }
