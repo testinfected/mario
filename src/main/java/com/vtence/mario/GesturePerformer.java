@@ -13,7 +13,7 @@ public interface GesturePerformer {
 
     void mouseClick(Coordinates where);
 
-    void type(String text);
+    void type(CharSequence text);
 
     default void delay(long millis) {
         try {

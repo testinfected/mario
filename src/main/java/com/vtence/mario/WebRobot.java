@@ -27,7 +27,7 @@ public class WebRobot implements GesturePerformer {
         mouse().click(where);
     }
 
-    public void type(String text) {
+    public void type(CharSequence text) {
         keyboard().sendKeys(text);
     }
 

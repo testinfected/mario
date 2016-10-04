@@ -12,7 +12,7 @@ public class UserGestures {
         return (robot) -> robot.mouseClick(where);
     }
 
-    public static UserGesture typeText(String text) {
+    public static UserGesture typeText(CharSequence text) {
         return (robot) -> robot.type(text);
     }
 
