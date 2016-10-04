@@ -1,6 +1,7 @@
 package com.vtence.mario;
 
 import org.junit.Test;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -34,8 +35,11 @@ public class InteractionsTest extends WebTest {
     typingText() {
         open("text-entry.html");
 
-        browser.element(id("input")).type("hello world\n");
+        browser.element(id("input")).type("hello world");
         browser.element(id("reversed")).hasText("dlrow olleh");
+        browser.element(id("input")).clear();
+        browser.element(id("input")).type(Keys.RETURN);
+        browser.element(id("reversed")).hasText("");
     }
 
     @Test public void
@@ -43,7 +47,7 @@ public class InteractionsTest extends WebTest {
         open("text-entry.html");
 
         browser.element(id("input")).type("hello world");
-        browser.element(id("input")).manipulate("clear its content", WebElement::clear);
+        browser.element(id("input")).manipulate("clear content of", WebElement::clear);
         browser.element(id("input")).hasText("");
     }
 

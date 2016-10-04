@@ -77,6 +77,10 @@ public class WebElementDriver {
         apply(ElementActions.type(text));
     }
 
+    public void clear() {
+        apply(ElementActions.clear());
+    }
+
     public <T> T query(String description, Query<T> query) {
         QueryManipulation<T> manipulation = new QueryManipulation<T>(query);
         manipulate(format("query %s of", description), manipulation);

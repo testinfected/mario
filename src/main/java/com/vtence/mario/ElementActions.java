@@ -12,4 +12,8 @@ public class ElementActions {
     public static ElementAction type(CharSequence text) {
         return manipulate("type text in", element -> element.sendKeys(text));
     }
+
+    public static ElementAction clear() {
+        return manipulate("clear content of", WebElement::clear);
+    }
 }
