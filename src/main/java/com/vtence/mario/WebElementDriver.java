@@ -73,7 +73,7 @@ public class WebElementDriver {
         apply(ElementActions.click());
     }
 
-    public void type(String text) {
+    public void type(CharSequence text) {
         apply(ElementActions.type(text));
     }
 

@@ -9,7 +9,7 @@ public class ElementActions {
         return manipulate("click on", WebElement::click);
     }
 
-    public static ElementAction type(String text) {
+    public static ElementAction type(CharSequence text) {
         return manipulate("type text in", element -> element.sendKeys(text));
     }
 }
