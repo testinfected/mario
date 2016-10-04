@@ -60,7 +60,7 @@ public class WebElementDriver {
     }
 
     public <T> void has(String propertyName, Query<T> property, Matcher<? super T> matching) {
-        has(new ElementPropertyQuery<T>(propertyName, property), matching);
+        has(new ElementPropertyQuery<>(propertyName, property), matching);
     }
 
     public <T> void has(ElementPropertyQuery<T> property, Matcher<? super T> matching) {
