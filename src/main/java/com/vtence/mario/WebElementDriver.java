@@ -59,6 +59,10 @@ public class WebElementDriver {
         has(ElementProperties.text(), matching);
     }
 
+    public <T> void has(String propertyName, Query<T> property, Matcher<? super T> matching) {
+        has(new ElementPropertyQuery<T>(propertyName, property), matching);
+    }
+
     public <T> void has(ElementPropertyQuery<T> property, Matcher<? super T> matching) {
         check(new ElementPropertyAssertionProbe<>(selector, property, matching));
     }

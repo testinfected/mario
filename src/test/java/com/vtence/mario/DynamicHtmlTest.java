@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriverException;
 
 import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.equalTo;
 
 public class DynamicHtmlTest extends WebTest {
 
@@ -58,5 +59,13 @@ public class DynamicHtmlTest extends WebTest {
                 return false;
             }
         }, "clickable", "not clickable");
+    }
+
+    @Test
+    public void assertingAnElementProperty() {
+        open("async-visible.html");
+
+        browser.element(By.id("action")).has("visibility", e -> e.getCssValue("visibility"), equalTo("hidden"));
+        browser.element(By.id("action")).has("visibility", e -> e.getCssValue("visibility"), equalTo("visible"));
     }
 }
