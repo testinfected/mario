@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Async Element Visible</title>
+</head>
+<body>
+<h1>Example Async Element Visible</h1>
+
+<button style="visibility: hidden" type="button" id="action">Click me!</button>
+
+<script type="text/javascript">
+    function enableElement() {
+        document.getElementById("action").style.visibility = "visible";
+    }
+
+    function eventually(f) {
+        setTimeout(f, 1000);
+    }
+
+    eventually(enableElement);
+</script>
+</body>
+</html>

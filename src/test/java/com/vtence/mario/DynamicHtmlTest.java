@@ -2,6 +2,7 @@ package com.vtence.mario;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriverException;
 
 import static org.hamcrest.Matchers.containsString;
 
@@ -43,5 +44,19 @@ public class DynamicHtmlTest extends WebTest {
 
         browser.element(By.id("action")).isDisabled();
         browser.element(By.id("action")).isEnabled();
+    }
+
+    @Test
+    public void assertingAnElementState() {
+        open("async-visible.html");
+
+        browser.element(By.id("action")).is(element -> {
+            try {
+                element.click();
+                return true;
+            } catch (WebDriverException notClickable) {
+                return false;
+            }
+        }, "clickable", "not clickable");
     }
 }

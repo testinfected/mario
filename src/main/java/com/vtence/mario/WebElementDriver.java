@@ -43,6 +43,10 @@ public class WebElementDriver {
         is(ElementStates.disabled());
     }
 
+    public void is(Query<Boolean> state, String stateDescription, String oppositeStateDescription) {
+        is(new ElementStateMatcher(state, stateDescription, oppositeStateDescription));
+    }
+
     public void is(ElementStateMatcher state) {
         check(new ElementAssertionProbe(selector, state));
     }

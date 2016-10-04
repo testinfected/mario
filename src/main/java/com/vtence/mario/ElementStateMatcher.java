@@ -5,18 +5,18 @@ import org.hamcrest.TypeSafeMatcher;
 import org.openqa.selenium.WebElement;
 
 public class ElementStateMatcher extends TypeSafeMatcher<WebElement> {
-    private final Query<Boolean> query;
+    private final Query<Boolean> state;
     private final String stateDescription;
     private final String oppositeStateDescription;
 
-    public ElementStateMatcher(Query<Boolean> query, String stateDescription, String oppositeStateDescription) {
-        this.query = query;
+    public ElementStateMatcher(Query<Boolean> state, String stateDescription, String oppositeStateDescription) {
+        this.state = state;
         this.stateDescription = stateDescription;
         this.oppositeStateDescription = oppositeStateDescription;
     }
 
     protected boolean matchesSafely(WebElement element) {
-        return query.perform(element);
+        return state.perform(element);
     }
 
     public void describeTo(Description description) {
