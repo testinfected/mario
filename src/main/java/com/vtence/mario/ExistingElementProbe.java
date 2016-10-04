@@ -13,7 +13,7 @@ public class ExistingElementProbe extends ElementProbe {
     }
 
     public void describeTo(Description description) {
-        description.appendText("look for ");
+        description.appendText("find ");
         super.describeTo(description);
     }
 }

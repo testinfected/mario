@@ -1,15 +1,18 @@
 package com.vtence.mario;
 
 import org.hamcrest.Description;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NotFoundException;
+import org.openqa.selenium.SearchContext;
+import org.openqa.selenium.WebElement;
 
-public class FirstOfElementSelector implements ElementSelector {
+public class ElementLocator implements ElementSelector {
 
     private final SearchContext context;
     private final By criteria;
     private WebElement foundElement;
 
-    public FirstOfElementSelector(SearchContext context, By criteria) {
+    public ElementLocator(SearchContext context, By criteria) {
         this.context = context;
         this.criteria = criteria;
     }
@@ -34,11 +37,11 @@ public class FirstOfElementSelector implements ElementSelector {
         description.appendText("an element ").appendText(formatCriteria());
     }
 
-    private String formatCriteria() {
-        return criteria.toString().replaceFirst("By\\.", "by ").replaceFirst(": ", " \"").concat("\"");
+    public void describeFailureTo(Description description) {
+        description.appendText("did not find any element ").appendText(formatCriteria());
     }
 
-    public void describeFailureTo(Description description) {
-        description.appendText("did not find matching element");
+    private String formatCriteria() {
+        return criteria.toString().replaceFirst("By\\.", "by ").replaceFirst(": ", " \"").concat("\"");
     }
 }

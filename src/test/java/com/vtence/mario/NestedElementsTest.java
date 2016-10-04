@@ -10,10 +10,14 @@ public class NestedElementsTest extends WebTest {
     public void navigatingToNestedElements() throws Exception {
         open("nested-elements.html");
 
-        browser.element(By.id("a")).element(By.className("button")).click();
-        browser.element(By.id("display")).hasText(equalTo("Button A was pressed"));
+        WebElementDriver display = browser.element(By.id("display"));
+        WebElementDriver buttonA = browser.element(By.id("a")).element(By.className("button"));
+        WebElementDriver buttonB = browser.element(By.id("b")).element(By.className("button"));
 
-        browser.element(By.id("b")).element(By.className("button")).click();
-        browser.element(By.id("display")).hasText(equalTo("Button B was pressed"));
+        buttonA.click();
+        display.hasText(equalTo("Button A was pressed"));
+
+        buttonB.click();
+        display.hasText(equalTo("Button B was pressed"));
     }
 }

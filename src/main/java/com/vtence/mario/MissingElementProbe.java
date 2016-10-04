@@ -18,12 +18,12 @@ public class MissingElementProbe extends ElementProbe {
     }
 
     public void describeTo(Description description) {
-        description.appendText("check that");
+        description.appendText("check that ");
         super.describeTo(description);
-        description.appendText(" did not exist");
+        description.appendText(" is missing");
     }
 
     public void describeFailureTo(Description description) {
-        description.appendText("it did exist");
+        description.appendText("element was found");
     }
 }

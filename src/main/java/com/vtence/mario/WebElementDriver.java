@@ -121,8 +121,7 @@ public class WebElementDriver {
     }
 
     public WebElementDriver element(By criteria) {
-        exists();
-        return new WebElementDriver(new FirstOfElementSelector(selector.found(), criteria), prober, gesturePerformer);
+        return new WebElementDriver(new NestedElementLocator(selector, criteria), prober, gesturePerformer);
     }
 
     private void check(Probe probe) {

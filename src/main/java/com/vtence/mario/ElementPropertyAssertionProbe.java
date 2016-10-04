@@ -28,9 +28,9 @@ public class ElementPropertyAssertionProbe<T> extends ElementProbe {
     }
 
     public void describeTo(Description description) {
-        description.appendText("look for ");
+        description.appendText("check that ");
         super.describeTo(description);
-        description.appendText(" with ")
+        description.appendText(" has ")
                    .appendDescriptionOf(query)
                    .appendText(" ")
                    .appendDescriptionOf(matcher);

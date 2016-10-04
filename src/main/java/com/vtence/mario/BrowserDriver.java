@@ -20,7 +20,7 @@ public class BrowserDriver {
     }
 
     public WebElementDriver element(By criteria) {
-        return new WebElementDriver(new FirstOfElementSelector(webDriver, criteria), prober, gesturePerformer);
+        return new WebElementDriver(new ElementLocator(webDriver, criteria), prober, gesturePerformer);
     }
 
     /**

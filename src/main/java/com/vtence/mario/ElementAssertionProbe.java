@@ -22,9 +22,9 @@ public class ElementAssertionProbe extends ElementProbe {
     }
 
     public void describeTo(Description description) {
-        description.appendText("find ");
+        description.appendText("check that ");
         super.describeTo(description);
-        description.appendText(" that ").appendDescriptionOf(assertion);
+        description.appendText(" ").appendDescriptionOf(assertion);
     }
 
     public void describeFailureTo(Description description) {
