@@ -33,7 +33,7 @@ public class DynamicHtmlTest extends WebTest {
 
     @Test
     public void assertingAnElementIsDisplayed() {
-        open("async-visibility.html");
+        open("async-display.html");
 
         browser.element(By.id("secret")).isHidden();
         browser.element(By.id("secret")).isShowingOnScreen();
