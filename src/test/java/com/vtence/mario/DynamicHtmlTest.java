@@ -2,7 +2,9 @@ package com.vtence.mario;
 
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.WebElement;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.equalTo;
@@ -62,10 +64,17 @@ public class DynamicHtmlTest extends WebTest {
     }
 
     @Test
+    public void assertingAnElementCssProperty() {
+        open("async-visible.html");
+
+        browser.element(By.id("action")).hasCssProperty("visibility", equalTo("hidden"));
+        browser.element(By.id("action")).hasCssProperty("visibility", equalTo("visible"));
+    }
+
+    @Test
     public void assertingAnElementProperty() {
         open("async-visible.html");
 
-        browser.element(By.id("action")).has("visibility", e -> e.getCssValue("visibility"), equalTo("hidden"));
-        browser.element(By.id("action")).has("visibility", e -> e.getCssValue("visibility"), equalTo("visible"));
+        browser.element(By.id("action")).has("dimension", WebElement::getSize, equalTo(new Dimension(80, 20)));
     }
 }
