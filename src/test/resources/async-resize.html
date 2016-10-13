@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>Async Element Resize</title>
+</head>
+<body>
+<h1>Example Async Element Resize</h1>
+
+<button style="width: 20px; height: 20px;" type="button" id="action">?</button>
+
+<script type="text/javascript">
+    function resizeElement() {
+        document.getElementById("action").textContent = "Click me!";
+        document.getElementById("action").style.width = "80px";
+        document.getElementById("action").style.height = "20px";
+    }
+
+    function eventually(f) {
+        setTimeout(f, 1000);
+    }
+
+    eventually(resizeElement);
+</script>
+</body>
+</html>

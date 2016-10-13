@@ -73,7 +73,7 @@ public class DynamicHtmlTest extends WebTest {
 
     @Test
     public void assertingAnElementProperty() {
-        open("async-visible.html");
+        open("async-resize.html");
 
         browser.element(By.id("action")).has("dimension", WebElement::getSize, equalTo(new Dimension(80, 20)));
     }
