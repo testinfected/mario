@@ -77,4 +77,11 @@ public class DynamicHtmlTest extends WebTest {
 
         browser.element(By.id("action")).has("dimension", WebElement::getSize, equalTo(new Dimension(80, 20)));
     }
+
+    @Test
+    public void assertingAnElementAttribute() {
+        open("async-attribute.html");
+
+        browser.element(By.id("password")).hasAttribute("type", "password");
+    }
 }

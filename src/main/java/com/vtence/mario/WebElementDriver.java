@@ -59,6 +59,14 @@ public class WebElementDriver {
         has(ElementProperties.text(), matching);
     }
 
+    public void hasAttribute(String name, String value) {
+        hasAttribute(name, equalTo(value));
+    }
+
+    public void hasAttribute(String name, Matcher<? super String> matching) {
+        has(ElementProperties.attribute(name), matching);
+    }
+
     public void hasCssProperty(String propertyName, Matcher<? super String> matching) {
         has(ElementProperties.cssProperty(propertyName), matching);
     }

@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Async Element Attribute</title>
+</head>
+<body>
+<h1>Example Async Element Attribute</h1>
+
+<input id="password" value="secret"/>
+
+<script type="text/javascript">
+    function hideSecret() {
+        document.getElementById("password").setAttribute("type", "password");
+    }
+
+    function eventually(f) {
+        setTimeout(f, 1000);
+    }
+
+    eventually(hideSecret);
+</script>
+</body>
+</html>
