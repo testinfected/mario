@@ -16,4 +16,8 @@ public class ElementActions {
     public static ElementAction clear() {
         return manipulate("clear content of", WebElement::clear);
     }
+
+    public static ElementAction submit() {
+        return manipulate("submit", WebElement::submit);
+    }
 }

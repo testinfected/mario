@@ -32,6 +32,14 @@ public class InteractionsTest extends WebTest {
     }
 
     @Test public void
+    submittingAForm() {
+        open("form-submission.html");
+
+        browser.element(tagName("form")).submit();
+        browser.element(id("display")).hasText("Success!");
+    }
+
+    @Test public void
     typingText() {
         open("text-entry.html");
 

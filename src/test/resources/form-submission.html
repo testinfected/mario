@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>Form Submission</title>
+</head>
+<body>
+<h1>Example Async Behaviour Initiated by Form Submission</h1>
+
+<form action="#" onsubmit="eventually(changeText);">
+    <input id="submit" type="submit" value="Click me" />
+</form>
+
+<p id="display">This will change.</p>
+
+<script type="text/javascript">
+    function changeText() {
+        document.getElementById("display").textContent = "Success!";
+    }
+
+    function eventually(f) {
+        setTimeout(f, 1000);
+    }
+</script>
+</body>
+</html>

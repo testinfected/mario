@@ -85,6 +85,10 @@ public class WebElementDriver {
         apply(ElementActions.click());
     }
 
+    public void submit() {
+        apply(ElementActions.submit());
+    }
+
     public void type(CharSequence text) {
         apply(ElementActions.type(text));
     }
