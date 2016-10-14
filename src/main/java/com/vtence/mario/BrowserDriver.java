@@ -24,10 +24,17 @@ public class BrowserDriver {
     }
 
     /**
-     * For the times we can't avoid it
+     * For those times you can't avoid it
      */
     public void pause(long millis) {
         gesturePerformer.perform(UserGestures.pause(millis));
+    }
+
+    /**
+     * For those times you don't know better
+     */
+    public WebDriver wrappedDriver() {
+        return webDriver;
     }
 
     public void quit() {
