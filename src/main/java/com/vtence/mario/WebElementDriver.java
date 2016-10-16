@@ -111,20 +111,20 @@ public class WebElementDriver {
         check(new ElementActionProbe(selector, action));
     }
 
-    public Coordinates elementCenter() {
-        ElementLocationProbe coordinates = new ElementLocationProbe(selector);
-        check(coordinates);
-        return coordinates.center();
+    public Coordinates elementLocation() {
+        ElementLocationProbe location = new ElementLocationProbe(selector);
+        check(location);
+        return location.coordinates();
     }
 
-    public void moveMouseToCenter() {
-        perform(UserGestures.mouseMoveTo(elementCenter()));
+    public void hoverWithMouse() {
+        perform(UserGestures.mouseMoveTo(elementLocation()));
     }
 
     public void leftClickWithMouse() {
         isShowingOnScreen();
         isEnabled();
-        perform(UserGestures.mouseClickAt(elementCenter()));
+        perform(UserGestures.mouseClickAt(elementLocation()));
     }
 
     public void enterTextUsingKeyboard(CharSequence text) {
@@ -132,8 +132,8 @@ public class WebElementDriver {
         perform(UserGestures.typeText(text));
     }
 
-    public void perform(UserGesture gesture) {
-        gesturePerformer.perform(gesture);
+    public void perform(UserGesture... gestures) {
+        gesturePerformer.perform(gestures);
     }
 
     public WebElementDriver element(By criteria) {

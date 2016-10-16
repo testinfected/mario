@@ -7,11 +7,15 @@ import org.openqa.selenium.interactions.internal.Coordinates;
 // supports moving the mouse to a given (x, y) position.
 public interface GesturePerformer {
 
-    void perform(UserGesture... gestures);
+    default void perform(UserGesture... gestures) {
+        for (UserGesture gesture : gestures) {
+            gesture.performUsing(this);
+        }
+    }
 
     void moveMouseTo(Coordinates where);
 
-    void mouseClick(Coordinates where);
+    void click();
 
     void type(CharSequence text);
 

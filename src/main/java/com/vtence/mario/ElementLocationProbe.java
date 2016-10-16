@@ -6,7 +6,7 @@ import org.openqa.selenium.interactions.internal.Coordinates;
 import org.openqa.selenium.internal.Locatable;
 
 public class ElementLocationProbe extends ElementProbe {
-    private Coordinates center;
+    private Coordinates coordinates;
 
     public ElementLocationProbe(ElementSelector selector) {
         super(selector);
@@ -14,16 +14,16 @@ public class ElementLocationProbe extends ElementProbe {
 
     protected void probe(WebElement found) {
         if (found instanceof Locatable) {
-            center = ((Locatable) found).getCoordinates();
+            coordinates = ((Locatable) found).getCoordinates();
         }
     }
 
-    public Coordinates center() {
-        return center;
+    public Coordinates coordinates() {
+        return coordinates;
     }
 
     public boolean isSatisfied() {
-        return center != null;
+        return coordinates != null;
     }
 
     public void describeTo(Description description) {

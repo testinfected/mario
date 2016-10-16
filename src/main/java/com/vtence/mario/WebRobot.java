@@ -6,8 +6,6 @@ import org.openqa.selenium.interactions.Keyboard;
 import org.openqa.selenium.interactions.Mouse;
 import org.openqa.selenium.interactions.internal.Coordinates;
 
-import java.util.stream.Stream;
-
 public class WebRobot implements GesturePerformer {
     private final WebDriver driver;
 
@@ -15,16 +13,12 @@ public class WebRobot implements GesturePerformer {
         this.driver = driver;
     }
 
-    public void perform(UserGesture... gestures) {
-        Stream.of(gestures).forEach(gesture -> gesture.performUsing(this));
-    }
-
     public void moveMouseTo(Coordinates where) {
         mouse().mouseMove(where);
     }
 
-    public void mouseClick(Coordinates where) {
-        mouse().click(where);
+    public void click() {
+        mouse().click(null);
     }
 
     public void type(CharSequence text) {
