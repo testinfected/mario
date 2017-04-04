@@ -82,6 +82,7 @@ public class WebElementDriver {
     public void click() {
         isShowingOnScreen();
         isEnabled();
+        hoverWithMouse();
         apply(ElementActions.click());
     }
 
