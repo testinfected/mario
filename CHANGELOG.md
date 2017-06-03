@@ -2,6 +2,15 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.3.1] - 2017-06-03
+
+### Added
+- A `WebElementLocator` interface shared by both `BrowserDriver` and
+  `WebElementDriver` ([#17](https://github.com/testinfected/mario/issues/17))
+
+### Fixed
+- An issue when clicking on a button not visible on screen using Chrome ([#16](https://github.com/testinfected/mario/issues/16))
+
 ## [0.3.0] - 2016-10-17
 
 ### Added
@@ -43,6 +52,7 @@ message ([#8])
 Initial public release
 
 
+[0.3.1]: https://github.com/testinfected/mario/compare/v0.3.1...v0.3.0
 [0.3.0]: https://github.com/testinfected/mario/compare/v0.3.0...v0.2
 [0.2]: https://github.com/testinfected/mario/compare/v0.2...v0.1
 
@@ -59,3 +69,5 @@ Initial public release
 [#11]: https://github.com/testinfected/mario/issues/11
 [#12]: https://github.com/testinfected/mario/issues/12
 [#13]: https://github.com/testinfected/mario/issues/13
+[#16]: https://github.com/testinfected/mario/issues/13
+[#17]: https://github.com/testinfected/mario/issues/13
