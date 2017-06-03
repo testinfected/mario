@@ -7,7 +7,7 @@ import org.openqa.selenium.interactions.internal.Coordinates;
 import static java.lang.String.format;
 import static org.hamcrest.Matchers.equalTo;
 
-public class WebElementDriver {
+public class WebElementDriver implements WebElementLocator {
 
     private final ElementSelector selector;
     private final Prober prober;
@@ -138,7 +138,7 @@ public class WebElementDriver {
     }
 
     public WebElementDriver element(By criteria) {
-        return new WebElementDriver(new NestedElementLocator(selector, criteria), prober, gesturePerformer);
+        return new WebElementDriver(new NestedElementFinder(selector, criteria), prober, gesturePerformer);
     }
 
     private void check(Probe probe) {

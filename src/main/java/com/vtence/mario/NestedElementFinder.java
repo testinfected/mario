@@ -5,14 +5,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.NotFoundException;
 import org.openqa.selenium.WebElement;
 
-public class NestedElementLocator implements ElementSelector {
+public class NestedElementFinder implements ElementSelector {
 
     private final By criteria;
     private final ElementSelector parent;
 
     private WebElement foundElement;
 
-    public NestedElementLocator(ElementSelector parent, By criteria) {
+    public NestedElementFinder(ElementSelector parent, By criteria) {
         this.parent = parent;
         this.criteria = criteria;
     }

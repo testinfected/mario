@@ -6,13 +6,13 @@ import org.openqa.selenium.NotFoundException;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 
-public class ElementLocator implements ElementSelector {
+public class ElementFinder implements ElementSelector {
 
     private final SearchContext context;
     private final By criteria;
     private WebElement foundElement;
 
-    public ElementLocator(SearchContext context, By criteria) {
+    public ElementFinder(SearchContext context, By criteria) {
         this.context = context;
         this.criteria = criteria;
     }

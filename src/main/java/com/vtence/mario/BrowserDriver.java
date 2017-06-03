@@ -3,7 +3,7 @@ package com.vtence.mario;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class BrowserDriver {
+public class BrowserDriver implements WebElementLocator {
 
     private final Prober prober;
     private final WebDriver webDriver;
@@ -20,7 +20,7 @@ public class BrowserDriver {
     }
 
     public WebElementDriver element(By criteria) {
-        return new WebElementDriver(new ElementLocator(webDriver, criteria), prober, gesturePerformer);
+        return new WebElementDriver(new ElementFinder(webDriver, criteria), prober, gesturePerformer);
     }
 
     /**
