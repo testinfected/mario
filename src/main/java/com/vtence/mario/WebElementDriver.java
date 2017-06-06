@@ -82,7 +82,6 @@ public class WebElementDriver implements WebElementLocator {
     public void click() {
         isShowingOnScreen();
         isEnabled();
-        hoverWithMouse();
         apply(ElementActions.click());
     }
 
@@ -125,6 +124,7 @@ public class WebElementDriver implements WebElementLocator {
     public void leftClickWithMouse() {
         isShowingOnScreen();
         isEnabled();
+        hoverWithMouse();
         perform(UserGestures.mouseClickAt(elementLocation()));
     }
 
