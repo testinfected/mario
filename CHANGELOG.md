@@ -2,6 +2,11 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.3.2] - 2017-06-08
+
+### Changed
+- Move mouse over element only if clicking with mouse, and not with synthetic clicks (see [#16](https://github.com/testinfected/mario/issues/16))
+
 ## [0.3.1] - 2017-06-03
 
 ### Added
@@ -52,6 +57,7 @@ message ([#8])
 Initial public release
 
 
+[0.3.2]: https://github.com/testinfected/mario/compare/v0.3.2...v0.3.1
 [0.3.1]: https://github.com/testinfected/mario/compare/v0.3.1...v0.3.0
 [0.3.0]: https://github.com/testinfected/mario/compare/v0.3.0...v0.2
 [0.2]: https://github.com/testinfected/mario/compare/v0.2...v0.1
