@@ -8,6 +8,8 @@ public class ElementAssertionProbe extends ElementProbe {
     private final Matcher<WebElement> assertion;
     private WebElement found;
 
+    private boolean match;
+
     public ElementAssertionProbe(ElementSelector selector, ElementStateMatcher assertion) {
         super(selector);
         this.assertion = assertion;
@@ -15,10 +17,11 @@ public class ElementAssertionProbe extends ElementProbe {
 
     protected void probe(WebElement found) {
         this.found = found;
+        this.match = assertion.matches(found);
     }
 
     public boolean isSatisfied() {
-        return super.isSatisfied() && assertion.matches(found);
+        return super.isSatisfied() && match;
     }
 
     public void describeTo(Description description) {
