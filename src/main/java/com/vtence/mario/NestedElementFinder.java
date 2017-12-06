@@ -40,8 +40,7 @@ public class NestedElementFinder implements ElementSelector {
     public void describeTo(Description description) {
         description.appendText("an element ").appendText(formatCriteria())
                    .appendText(", in ")
-                   .appendDescriptionOf(parent)
-                   .appendText(",");
+                   .appendDescriptionOf(parent);
     }
 
     private String formatCriteria() {
