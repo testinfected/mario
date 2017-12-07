@@ -11,7 +11,7 @@ define 'mario', :group => 'com.vtence.mario', :version => VERSION_NUMBER do
   compile.options.target = '1.8'
 
   compile.with :hamcrest, :selenium_api
-  test.with :junit, :hamcrest_junit, transitive(artifacts(:selenium_firefox_driver))
+  test.with :junit, :hamcrest_junit, transitive(artifacts(:selenium_chrome_driver))
 
   package :jar
   package :javadoc

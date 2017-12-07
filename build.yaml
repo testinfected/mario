@@ -11,4 +11,4 @@ artifacts:
   # -- test dependencies
   junit: junit:junit:jar:4.12
   hamcrest_junit: org.hamcrest:hamcrest-junit:jar:2.0.0.0
-  selenium_firefox_driver: org.seleniumhq.selenium:selenium-firefox-driver:jar:2.53.0
+  selenium_chrome_driver: org.seleniumhq.selenium:selenium-chrome-driver:jar:2.53.0
