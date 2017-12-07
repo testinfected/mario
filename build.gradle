@@ -25,7 +25,7 @@ def libs = [
 
         junit                  : 'junit:junit:4.12@jar',
         hamcrest_junit         : 'org.hamcrest:hamcrest-junit:2.0.0.0',
-        selenium_firefox_driver: 'org.seleniumhq.selenium:selenium-firefox-driver:2.53.0'
+        selenium_chrome_driver: 'org.seleniumhq.selenium:selenium-chrome-driver:2.53.0'
 ]
 
 def providedDependencies = []
@@ -40,7 +40,7 @@ dependencies {
 
     testCompile libs.junit
     testCompile libs.hamcrest_junit
-    testCompile libs.selenium_firefox_driver
+    testCompile libs.selenium_chrome_driver
 }
 
 compileJava.options.encoding = 'UTF-8'

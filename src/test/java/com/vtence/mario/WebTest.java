@@ -1,13 +1,13 @@
 package com.vtence.mario;
 
 import org.junit.After;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.net.URL;
 
 public abstract class WebTest {
 
-    protected BrowserDriver browser = new BrowserDriver(new UnsynchronizedProber(1000, 50), new FirefoxDriver());
+    protected BrowserDriver browser = new BrowserDriver(new UnsynchronizedProber(1000, 50), new ChromeDriver());
 
     ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
 

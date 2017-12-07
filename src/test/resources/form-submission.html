@@ -5,8 +5,8 @@
 <body>
 <h1>Example Async Behaviour Initiated by Form Submission</h1>
 
-<form action="#" onsubmit="eventually(changeText);">
-    <input id="submit" type="submit" value="Click me" />
+<form action="#" onsubmit="eventually(changeText); return false;">
+    <button type="submit">Click me"</button>
 </form>
 
 <p id="display">This will change.</p>
@@ -17,7 +17,7 @@
     }
 
     function eventually(f) {
-        setTimeout(f, 1000);
+        setTimeout(f, 500);
     }
 </script>
 </body>
