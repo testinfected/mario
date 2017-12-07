@@ -1,7 +1,7 @@
 require 'buildr/gpg'
 require 'buildr/jacoco'
 
-VERSION_NUMBER = "0.3.3"
+VERSION_NUMBER = "0.3.4-SNAPSHOT"
 
 Release.commit_message = lambda { |version| "Bump version number to #{version}" }
 Release.tag_name = lambda { |version| "v#{version}" }
