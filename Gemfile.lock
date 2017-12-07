@@ -4,7 +4,7 @@ GEM
     atoulme-Antwrap (0.7.5)
       rjb (>= 1.0.3)
     builder (3.2.2)
-    buildr (1.5.3)
+    buildr (1.5.4)
       atoulme-Antwrap (= 0.7.5)
       builder (= 3.2.2)
       bundler
