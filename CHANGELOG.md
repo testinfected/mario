@@ -83,5 +83,6 @@ Initial public release
 [#11]: https://github.com/testinfected/mario/issues/11
 [#12]: https://github.com/testinfected/mario/issues/12
 [#13]: https://github.com/testinfected/mario/issues/13
-[#16]: https://github.com/testinfected/mario/issues/13
-[#17]: https://github.com/testinfected/mario/issues/13
+[#16]: https://github.com/testinfected/mario/issues/16
+[#17]: https://github.com/testinfected/mario/issues/17
+[#18]: https://github.com/testinfected/mario/issues/18

@@ -19,14 +19,19 @@ repositories {
     mavenCentral()
 }
 
-def libs = [
-        selenium_api           : 'org.seleniumhq.selenium:selenium-api:2.53.0',
-        hamcrest               : 'org.hamcrest:java-hamcrest:2.0.0.0',
+ext {
+    selenium_version = '3.9.1'
 
-        junit                  : 'junit:junit:4.12@jar',
-        hamcrest_junit         : 'org.hamcrest:hamcrest-junit:2.0.0.0',
-        selenium_chrome_driver: 'org.seleniumhq.selenium:selenium-chrome-driver:2.53.0'
-]
+    libs = [
+
+            selenium_api          : "org.seleniumhq.selenium:selenium-api:$selenium_version",
+            hamcrest              : 'org.hamcrest:java-hamcrest:2.0.0.0',
+
+            junit                 : 'junit:junit:4.12@jar',
+            hamcrest_junit        : 'org.hamcrest:hamcrest-junit:2.0.0.0',
+            selenium_chrome_driver: "org.seleniumhq.selenium:selenium-chrome-driver:$selenium_version"
+    ]
+}
 
 def providedDependencies = []
 ext {
@@ -45,8 +50,10 @@ dependencies {
 
 compileJava.options.encoding = 'UTF-8'
 
-task 'version' << {
-    println version
+task 'version' {
+    doLast {
+        println version
+    }
 }
 
 modifyPom {
